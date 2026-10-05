@@ -3,6 +3,8 @@ collect all the data
 sources:
     https://www.ai-bites.net/tf-idf-and-bm25-for-rag-a-complete-guide/
 
+	tutorial for the rag pipeline
+		https://github.com/pixegami/simple-rag-pipeline
 
 
 index it
@@ -42,4 +44,14 @@ index it
             import bm25s
 
     - store them into vector db
-    
+
+
+parse arguments with argparse
+
+
+no python 3.14 - Wheels are available for `torch` (v2.7.1) with the following Python ABI tags: `cp39`, `cp310`, `cp311`, `cp312`, `cp313`, `cp313t`
+
+installed vllm 0.29.0 with
+	f1r6s12% uv pip install https://github.com/vllm-project/vllm/releases/download/v0.29.0/vllm-0.29.0+cpu-cp38-abi3-manylinux_2_34_x86_64.whl --torch-backend cpu
+
+added rules to the pyproject.toml, so now we are installing the latest compatable version of vllm and we are using torch that works with cpu
