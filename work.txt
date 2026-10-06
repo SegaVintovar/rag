@@ -9,14 +9,18 @@ index it
     - chunk files
         - start with TF-IDF, then implement BM25 of it
         -- TF-IDF
-            Let's also quickly see the code in action. We are going to use sklearn for this. To visualize the results, we are going to use Pandas data frames.
+            Let's also quickly see the code in action. We are going to use
+            sklearn for this. To visualize the results, we are going to
+            use Pandas data frames.
 
             import pandas as pd
             from sklearn.feature_extraction.text import TfidfVectorizer
 
             corpus = [
             'cats and dogs are pets.',
-            'cats and dogs are pet animals though I prefer dogs. Dogs obey our commands, can be trained easily and play with us all the time.',
+            'cats and dogs are pet animals though I prefer dogs.
+            Dogs obey our commands, can be trained easily and play with
+            us all the time.',
             'And this is the third one.',
             'Horses are also pets',
             ]
@@ -31,7 +35,11 @@ index it
 
             print(tfidf_df)
         -- BM25
-            For BM25, let's use a library called bm25s. Though there are a handful of libraries for calculating BM25, I found this to be lightweight and sufficient to illustrate our example. We will have to install bm25s using pip:
+            For BM25, let's use a library called bm25s.
+            Though there are a handful of libraries for calculating BM25,
+            I found this to be lightweight and sufficient
+            to illustrate our example.
+            We will have to install bm25s using pip:
 
             pip install bm25s
             pip install bm25s[full]
