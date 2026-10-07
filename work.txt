@@ -70,4 +70,5 @@ added rules to the pyproject.toml, so now we are installing the latest compatabl
 
     - collect all files
     - chunk them
-    - 
+    - tokenize them
+    - store them
