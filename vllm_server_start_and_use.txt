@@ -1,26 +1,26 @@
 
 # to run a server use this commands
-#		--no-sync cause some dependencies cannot be resolved
+#        --no-sync cause some dependencies cannot be resolved
 
-#		flags below made it possible on this machine
-#		-gpu-memory-utilization 0.3 \
-#    	--max-model-len 2048
+#        flags below made it possible on this machine
+#        -gpu-memory-utilization 0.3 \
+#        --max-model-len 2048
 
 # command to start the server
 uv run --no-sync vllm serve Qwen/Qwen3-0.6B \
     --gpu-memory-utilization 0.3 \
     --max-model-len 2048
 
-# commad to 
+# commad to prompt the llm
 curl -X POST "http://localhost:8000/v1/chat/completions" \
-	-H "Content-Type: application/json" \
-	--data '{
-		"model": "Qwen/Qwen3-0.6B",
-		"messages": [
-			{
-				"role": "user",
-				"content": "What is the capital of France?"
-			}
-		]
-	}'
+    -H "Content-Type: application/json" \
+    --data '{
+        "model": "Qwen/Qwen3-0.6B",
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the capital of France?"
+            }
+        ]
+    }'
 
