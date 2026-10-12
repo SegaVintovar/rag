@@ -1,9 +1,11 @@
+export UV_CACHE_DIR := $(CURDIR)/.uv-cache
+
 install:
-	uv sync \
-  		--no-install-package torchvision \
-  		--no-install-package torchaudio
+	uv sync
+#   		--no-install-package torchvision \
+#   		--no-install-package torchaudio
 run:
-	uv run python -m src/
+	uv run python -m src
 
 debug:
 	pdb

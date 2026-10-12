@@ -2,7 +2,7 @@ from vllm import LLM, SamplingParams
 from dotenv import load_dotenv
 import os
 from rag.datamodels.datamodels import MinimalSource
-from rag import Rag
+
 
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import CharacterTextSplitter
@@ -26,6 +26,7 @@ print(qwen.chat(messages=msgs, sampling_params=sp, use_tqdm=True))
 
 # gemini = LLM(model="gemini-3.1-flash-lite", hf_token=HF_TOKEN)
 
+from rag import Rag
 rag = Rag()
 
 corpus_folder = "vllm-0.10.1"
