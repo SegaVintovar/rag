@@ -1,4 +1,4 @@
-from datamodels.datamodels import MinimalSource, \
+from rag.datamodels.datamodels import MinimalSource, \
     UnansweredQuestion, AnsweredQuestion, \
     RagDataset, MinimalSearchResults, \
     MinimalAnswer, StudentSearchResults, \
@@ -48,6 +48,9 @@ class Indexer():
 
 
 class Rag():
+    def __init__(self) -> None:
+        self.data_sources: list[MinimalSource] = []
+
     def index(self, max_chunk_size: int = 2000):
         myIndexer = Indexer(max_chunk_size)
         ...
