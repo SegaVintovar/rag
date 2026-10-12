@@ -3,7 +3,7 @@ install:
   		--no-install-package torchvision \
   		--no-install-package torchaudio
 run:
-	uv run python -m src/rag
+	uv run python -m src/
 
 debug:
 	pdb
