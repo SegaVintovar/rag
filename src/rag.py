@@ -1,4 +1,4 @@
-from rag.datamodels.datamodels import MinimalSource, \
+from .datamodels.datamodels import MinimalSource, \
     UnansweredQuestion, AnsweredQuestion, \
     RagDataset, MinimalSearchResults, \
     MinimalAnswer, StudentSearchResults, \
