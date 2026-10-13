@@ -30,9 +30,14 @@ explicit = true
 [tool.uv]
 environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
 
+[tool.uv.build-backend]
+module-name = "src"
+module-root = ""
+
 [project.scripts]
 rag-my-git = "rag_my_git:main"
 
 [build-system]
 requires = ["uv_build>=0.12.23,<0.13.0"]
 build-backend = "uv_build"
+

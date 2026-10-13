@@ -20,6 +20,14 @@ class ChunkingStrategy():
     ...
 
 
+class MdChunckingStrategy(ChunkingStrategy):
+    ...
+
+
+class PyChunkingStrategy(ChunkingStrategy):
+    ...
+
+
 class Chunk(MinimalSource):
     """
     This class represents one chunk

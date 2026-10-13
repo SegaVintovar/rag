@@ -1,11 +1,11 @@
 from vllm import LLM, SamplingParams
 from dotenv import load_dotenv
 import os
-from rag.datamodels.datamodels import MinimalSource
+from .datamodels.datamodels import MinimalSource
 
 
 from langchain_community.document_loaders import TextLoader
-from langchain.text_splitter import CharacterTextSplitter
+from langchain_text_splitters import CharacterTextSplitter, RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
 
@@ -14,7 +14,9 @@ load_dotenv()
 sp = SamplingParams()
 HF_TOKEN = os.environ["HF_TOKEN"]
 
-qwen = LLM(model="Qwen/Qwen3-0.6B", hf_token=HF_TOKEN)
+qwen = LLM(model="Qwen/Qwen3-0.6B",
+            hf_token=HF_TOKEN,
+            gpu_memory_utilization=0.75)
 tokenizer = qwen.encode
 
 tokenizer = qwen.get_tokenizer()
@@ -26,7 +28,7 @@ print(qwen.chat(messages=msgs, sampling_params=sp, use_tqdm=True))
 
 # gemini = LLM(model="gemini-3.1-flash-lite", hf_token=HF_TOKEN)
 
-from rag import Rag
+from .rag import Rag
 rag = Rag()
 
 corpus_folder = "vllm-0.10.1"
