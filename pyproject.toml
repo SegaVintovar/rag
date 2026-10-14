@@ -14,6 +14,7 @@ dependencies = [
     "langchain_community",
     "sentence-transformers>=6.1.0",
     "langchain-text-splitters>=1.1.3",
+    "chardet"
 ]
 
 [tool.uv.sources]
