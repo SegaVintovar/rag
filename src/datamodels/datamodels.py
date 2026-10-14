@@ -1,6 +1,9 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 import uuid
 
+
+class Chunk(BaseModel):
+    data_str: str
 
 class MinimalSource(BaseModel):
     """
@@ -9,6 +12,17 @@ class MinimalSource(BaseModel):
     file_path: str
     first_character_index: int
     last_character_index: int
+    data_str: str
+    max_chunk_size: int
+    chunks: list[Chunk]
+
+    @model_validator(mode='after')
+    def chunk_or_not_to_chunk(self) -> None:
+        if len(self.data_str) > self.max_chunk_size:
+            # chunk it
+            print(f"{self.file_path} has to be splitted")
+        else:
+            self.chunks.append(Chunk(data_str=self.data_str))
 
 
 #  represent an unanswered question
